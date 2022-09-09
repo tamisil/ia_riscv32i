@@ -424,7 +424,7 @@ element i_utype_ops
                 break;
             case UTYPE_AUIPC:
                 current_pc = read_pc();
-                result = current_pc + ((int32)imm << 12);
+                result = current_pc - RISCV_INSTR_SIZE + ((int32)imm << 12);
                 rf_xpr_write(result, rd);
                 break;
             default:
